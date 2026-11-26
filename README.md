@@ -1,66 +1,69 @@
-# CompetitorPulse Spybot Lite 🛡️
+# CompetitorPulse Spybot 🕵️⚡
 
-> **Stealth E-Commerce Competitor Price Radar & Stockout Watchdog (Free Open-Core Edition)**
+> **Stealth E-Commerce Competitor Price Radar & Stockout Intelligence Engine**
 
-An open-core automation utility engineered by **AutoSec Studio** for e-commerce stores and digital businesses.
-
-![CompetitorPulse Spybot Banner](docs/banner.jpg)
+A self-hosted, autonomous competitor monitoring system for Shopify, WooCommerce, and modern DTC brands. Detect competitor price drops, flash discounts, inventory stockouts, and catalog updates 24/7 with instant Telegram, Slack, and Webhook alerts.
 
 ---
 
-## ⚡ What is CompetitorPulse Spybot?
+## ⚡ The Business Problem It Solves
 
-Designed to protect businesses from silent failures and automate critical operations without expensive monthly SaaS fees.
-
-This Lite edition provides a zero-friction, self-hosted script to audit your core endpoints and send instant alerts to your private Telegram channel.
+* **Silent Competitor Undercutting:** Competitors launch flash sales or price cuts on key hero products. If you take 48 hours to notice, your ad budget burns while their store captures the traffic.
+* **Capitalizing on Competitor Stockouts:** When your rival runs out of stock, they cannot fulfill customer demand. CompetitorPulse Spybot notifies you instantly so you can increase your ad budget and capture their stranded buyers.
+* **Zero Monthly Subscriptions:** Avoid expensive SaaS pricing ($49 - $199/month). Own your monitoring engine forever.
 
 ---
 
-## 🚀 Quickstart (30 Seconds)
+## 🚀 Key Features
 
-### 1. Install Requirements
+* 🕵️ **Stealth Crawling Architecture:** User-Agent rotation and jitter delay prevent bot blocks.
+* 🛍️ **Multi-Platform Support:** Native Shopify JSON API parsing, Schema.org microdata, OpenGraph tags, and custom CSS selectors.
+* 📉 **Intelligent Variation Triggers:** Configurable percentage thresholds for price drops (`alert_on_price_drop_pct`) and price increases.
+* 📦 **Stockout & Restock Detection:** Instant alerts when competitor inventory empties or restocks.
+* 📱 **Actionable Telegram Cards:** Rich formatted HTML alerts with percentage change badges and direct `[ View Competitor Product ]` buttons.
+* 💾 **Persistent SQLite WAL Engine:** Zero data loss, historical price tracking, and intelligent cooldown deduplication.
+* 🐳 **Docker-Ready:** Deploy in seconds via `docker compose up -d` or standard Python 3.12.
+
+---
+
+## 🛠️ Quickstart (3 Minutes)
+
+### Option A: Local Python
 ```bash
+# 1. Install dependencies
 pip install -r requirements.txt
+
+# 2. Run diagnostics & setup
+python scripts/verify_setup.py
+
+# 3. Configure your targets in config/config.yaml and tokens in .env
+# 4. Launch the spybot
+python main.py
 ```
 
-### 2. Configure Environment
+### Option B: Docker Compose
 ```bash
-cp .env.example .env
-```
-Edit `.env` with your store endpoint and credentials.
-
-### 3. Launch
-```bash
-python main_lite.py
+docker compose up -d --build
 ```
 
 ---
 
-## 📊 Feature Comparison: Lite vs PRO Edition
+## ⚙️ Configuration Example (`config/config.yaml`)
 
-| Feature / Capability | Lite (Free GitHub) | PRO Edition ($10 Lifetime) |
-| :--- | :---: | :---: |
-| **Core Watchdog & Healthchecks** | ✅ Basic Single Check | ✅ Full Multi-endpoint Suite |
-| **Telegram Bot Alerts** | ✅ Standard Alerts | ✅ Interactive HTML & Recovery Pings |
-| **Silent Error Detection (200 OK)**| ❌ None | ✅ Keyword Assertions (Forbidden/Required) |
-| **Latency Tracking & Alerts** | ❌ None | ✅ Millisecond threshold triggers |
-| **Catalog Stockout & Price Drop**| ❌ None | ✅ 24/7 Anomaly & Glitch Protection |
-| **Multi-Channel Connectors** | ❌ Telegram only | ✅ WhatsApp, Slack & SMTP Email |
-| **Anti-Spam Cooldown & Deduplication**| ❌ None | ✅ SQLite WAL Persistent Filters |
-| **Automation Webhooks** | ❌ None | ✅ Outgoing Webhooks (n8n / Make / Sheets) |
-| **Production Deployment** | ❌ Manual script | ✅ Docker Compose & verify_setup scripts |
-
----
-
-## 🛒 Upgrade to CompetitorPulse Spybot PRO
-
-Unlock the full enterprise edition with lifetime access (zero monthly subscriptions):
-
-* 🔴 **Get it on Whop ($10):** [https://whop.com/autosec/autosec-e-commerce-revenue-leak-detection/](https://whop.com/autosec/autosec-e-commerce-revenue-leak-detection/)
-* 🟢 **Get it on Payhip ($10):** [https://payhip.com/b/fZx6v](https://payhip.com/b/fZx6v)
-* 🟡 **Custom Setup on Fiverr:** [https://www.fiverr.com/s/7j1PgDE](https://www.fiverr.com/s/7j1PgDE)
-* 📱 **Daily Automation Releases:** [https://t.me/autosec_studio](https://t.me/autosec_studio)
+```yaml
+targets:
+  - id: "competitor_hero"
+    name: "Competitor Headphones"
+    url: "https://competitor-store.com/products/wireless-headphones"
+    mode: "shopify_json"
+    check_interval_seconds: 300
+    triggers:
+      alert_on_price_drop_pct: 5.0
+      alert_on_price_increase_pct: 10.0
+      alert_on_stockout: true
+      alert_on_back_in_stock: true
+```
 
 ---
 
-Developed by **AutoSec Studio** — High-impact e-commerce automation engines.
+Developed with ❤️ by **AutoSec Studio** — Autonomous E-Commerce & Business Intelligence Engines.
