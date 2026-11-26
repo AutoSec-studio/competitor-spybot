@@ -1,6 +1,15 @@
 # CompetitorPulse Spybot 🕵️⚡
 
 > **Stealth E-Commerce Competitor Price Radar & Stockout Intelligence Engine**
+> <p align="left">
+  <a href="https://github.com/AutoSec-studio/competitor-spybot"><img src="https://img.shields.io/badge/python-3.10+-3776AB.svg?style=flat-square&logo=python&logoColor=white" alt="Python 3.10+"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat-square" alt="MIT License"></a>
+  <a href="https://github.com/AutoSec-studio/competitor-spybot"><img src="https://img.shields.io/badge/tests-8%20passed-brightgreen?style=flat-square&logo=pytest" alt="Tests"></a>
+  <a href="https://github.com/AutoSec-studio/competitor-spybot"><img src="https://img.shields.io/badge/Stealth_Radar-Zero_Proxy_Fees-00F59B?style=flat-square" alt="Stealth"></a>
+  <a href="https://t.me/autosec_studio"><img src="https://img.shields.io/badge/Telegram-@autosec__studio-229ED9?style=flat-square&logo=telegram&logoColor=white" alt="Telegram"></a>
+  <a href="https://whop.com/autosec/"><img src="https://img.shields.io/badge/Whop_Store-Get_Pro_$10-FF5C00?style=flat-square&logo=whop&logoColor=white" alt="Whop"></a>
+  <a href="https://payhip.com/"><img src="https://img.shields.io/badge/Payhip-Get_Pro_$10-00D2FF?style=flat-square" alt="Payhip"></a>
+</p>
 
 A self-hosted, autonomous competitor monitoring system for Shopify, WooCommerce, and modern DTC brands. Detect competitor price drops, flash discounts, inventory stockouts, and catalog updates 24/7 with instant Telegram, Slack, and Webhook alerts.
 
